@@ -1,0 +1,101 @@
+<!-- Page Start -->
+<div class="container" style="margin-top: 10%;">
+  <!-- Page Title Start -->
+  <div class="row" style="text-align: center">
+    <div class="col-sm-5">
+    </div>
+    <div class="col-sm-2">
+      <h2>LOGIN</h2>
+      <div hidden>{{loginform.form.valid}}</div>
+    </div>
+    <div class="col-sm-5">
+    </div>
+  </div>
+  <form #loginform="ngForm" (ngSubmit)="loginUser()">
+    
+    
+    
+    <!-- Page Title End -->
+
+    <!-- Page Body Start -->
+    <!-- <small class="danger">{{msg}}</small> -->
+    <!-- Username Start -->
+    
+      <div class="row form-group" >
+        <div class="col-sm-4">
+        </div>
+        <div class="col-sm-4" >
+          <label for="username">Username</label>
+          <sup style="color: red;">*</sup>
+          <input type="username" class="form-control" placeholder="Enter username" name="username"
+            [(ngModel)]="user.username" required #username="ngModel" [class.is-invalid]="username.invalid && username.touched">
+            <small class="text-danger"  [class.d-none]="username.valid || username.untouched">Username is required field</small>
+        </div>
+        <div class="col-sm-4">
+        </div>
+      </div>
+      <!-- Username End -->
+  
+      <!-- Password Start -->
+      <div class="row form-group">
+        <div class="col-sm-4">
+        </div>
+        <div class="col-sm-4" >
+          <label for="password">Password</label>
+          <sup style="color: red;">*</sup>
+          <input type="password" class="form-control" placeholder="Enter password" name="password"
+            [(ngModel)]="user.password"  required  pattern="^(?=(.*[a-zA-Z].*){2,})(?=.*\d.*)(?=.*\W.*)[a-zA-Z0-9\S]{5,15}$" #password="ngModel" [class.is-invalid]="password.invalid && password.touched">
+            <!--small class="text-danger"  [class.d-none]="password.valid || password.untouched">Password is required field</small-->
+  
+            <div *ngIf="password.errors && (password.invalid && password.touched)"> 
+              <small class="text-danger" *ngIf="password.errors.required" >Password is required field</small>
+             <small class="text-danger" *ngIf="password.errors.pattern">Enter valid password</small>
+            </div>
+        </div>
+        <div class="col-sm-4">
+        </div>
+      </div>
+      <!-- Password End -->
+  
+  
+      <!-- Remember me Start-->
+      <div class="row">
+        <div class="col-sm-4">
+        </div>
+        <div class="col-sm-2">
+          <div class="form-check" >
+            <label><input class="form-check-input" type="checkbox" name="remember">Remember me</label>
+          </div>
+        </div>
+        <!-- Remember me End-->
+  
+        <!-- Forgot password -->
+        <div class="col-sm-2">
+          <div class="container">
+            <span class="password">Forgot <a href="#">password?</a></span>
+          </div>
+        </div>
+        <div class="col-sm-4">
+        </div>
+      </div>
+  
+      <!-- Login button Start -->
+      <div class="row">
+        <div class="col-sm-4">
+        </div>
+        <div class="col-sm-4">
+          <button  [disabled]="loginform.form.invalid" type="submit" class="btn btn-primary btn-block">Login</button>
+          <small class="text-danger" >{{msg}}</small>
+        </div>
+        <div class="col-sm-4">
+        </div>
+      </div>
+
+   
+    
+   
+
+  
+   
+    <!-- Login button End -->
+    <!-- Page End -->

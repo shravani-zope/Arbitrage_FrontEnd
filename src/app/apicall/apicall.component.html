@@ -1,0 +1,78 @@
+
+<br>
+<app-header></app-header>
+<br>
+<!--div class="container">
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>Exchange</th>
+                <th>Shortname</th>
+                <th>QuoteType</th>
+                <th>Symbol</th>
+                <th>Index</th>
+                <th>Score</th>
+                <th>TypeDisp</th>
+                <th>Longname</th>
+                <th>IsYahooFinance</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let q of quotess">
+                <td><span>{{q.exchange}}</span></td>
+                <td><span>{{q.shortname}}</span></td>
+                <td><span>{{q.quoteType}}</span></td>
+                <td><span>{{q.symbol}}</span></td>
+                <td><span>{{q.index}}</span></td>
+                <td><span>{{q.score}}</span></td>
+                <td><span>{{q.typeDisp}}</span></td>
+                <td><span>{{q.longname}}</span></td>
+                <td><span>{{q.isYahooFinance}}</span></td>
+               
+            </tr>
+
+        </tbody>
+    </table>
+</div-->
+<div>
+    <table class="table table-bordered table-striped">
+        <thead>
+        
+                    <th>symbol name</th>
+                    <th>Quote Type</th>
+                    <th>NSE Price</th>                 
+                    <th>BSE price</th>
+                    <th>Profit</th>
+                    <th>BUY</th>
+                    <th>Save</th>
+              
+        </thead>
+        <tbody>
+            
+            
+                
+                <tr *ngFor="let i of counter">               
+                    <td><span>{{symbolname[i]}}</span></td>                             
+                    <td><span>{{QuoteResponse[i].quoteType}}</span></td>
+                    <td><span>{{nsePrice[i]}}</span></td>        
+                    <td><span>{{bsePrice[i]}}</span></td>
+                    <td><span>{{profitarray[i]}}</span></td>
+                    <td><span>{{buy[i]}}</span></td>
+                    <td><span><button type="submit" class="btn btn-outline-info" >SAVE</button></span></td>
+                   
+                </tr>
+                <!--tr *ngFor="let q of QuoteResponse">
+            
+                    <td><span>{{q.longName}}</span></td>   
+                    <td><span>{{q.quoteType}}</span></td> 
+                    <td><span>{{q.regularMarketPrice}}</span></td>
+                </tr-->
+                
+                
+                
+            
+        </tbody>
+    </table>
+
+</div>
+<app-footer></app-footer>
